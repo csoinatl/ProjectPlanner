@@ -80,7 +80,6 @@ CREATE TABLE IF NOT EXISTS `projects` (
 DROP TABLE IF EXISTS `projectteam`;
 CREATE TABLE IF NOT EXISTS `projectteam` (
   `projectID` bigint(10) NOT NULL,
-  `teamMember` varchar(60) NOT NULL,
   `designation` varchar(30) NOT NULL,
   `analysisHours` int(5) NOT NULL,
   `designHours` int(5) NOT NULL,
@@ -88,6 +87,13 @@ CREATE TABLE IF NOT EXISTS `projectteam` (
   `testingHours` int(5) NOT NULL,
   `managementHours` int(5) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+
+DROP TABLE IF EXISTS 'projectteamperson';
+CREATE TABLE IF NOT EXISTS 'projectteamperson' (
+	'projectID' bigint(10) not NULL,
+	'idperson' INT not null
+)
 
 -- --------------------------------------------------------
 
@@ -104,8 +110,19 @@ CREATE TABLE IF NOT EXISTS `projecttools` (
   `testingTools` varchar(50) NOT NULL,
   `managementTools` varchar(50) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+DROP TABLE IF EXISTS 'person'
+CREATE TABLE `person` (
+  `idperson` INT NOT NULL,
+  `first_name` VARCHAR(40) NULL,
+  `last_name` VARCHAR(40) NULL,
+  `title` VARCHAR(40) NULL,
+  PRIMARY KEY (`idperson`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1
+COMMENT = 'Person information Table';
+COMMIT;

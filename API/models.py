@@ -99,4 +99,7 @@ class Person(db.model):
 
     __tablename__ = "person"
     personID = db.column(db.BigInteger, primary_key=True)
-    name = db.column(db.String(100))
+    first_name = db.column(db.String(40))
+    last_name = db.column(db.String(40))
+    title = db.column(db.String(40))
+    
