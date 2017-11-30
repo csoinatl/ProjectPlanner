@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 25, 2017 at 12:33 AM
+-- Generation Time: Nov 30, 2017 at 12:47 AM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -84,15 +84,14 @@ CREATE TABLE IF NOT EXISTS `projects` (
 DROP TABLE IF EXISTS `projectteam`;
 CREATE TABLE IF NOT EXISTS `projectteam` (
   `projectID` bigint(10) NOT NULL,
-  `memberID` bigint(10) NOT NULL,
+  `teamMemberID` bigint(10) NOT NULL,
   `teamMemberName` varchar(100) NOT NULL,
   `designation` varchar(30) NOT NULL,
   `analysisHours` int(5) NOT NULL,
   `designHours` int(5) NOT NULL,
   `developmentHours` int(5) NOT NULL,
   `testingHours` int(5) NOT NULL,
-  `managementHours` int(5) NOT NULL,
-  PRIMARY KEY (`memberID`)
+  `managementHours` int(5) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
