@@ -1,0 +1,85 @@
+<!doctype html>
+
+
+<html>
+    <head>
+        <title>
+        Log Sheet
+        </title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="app.css" media="screen" />
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+        
+    </head>
+   
+<body>
+         <!--Navigation Menu-->
+         <div class="nav" id="nav">
+                <ul>
+                <li class="home"><a  href="#">Home</a></li>
+                <li class="tutorials"><a class="active" href="#">Tracking</a></li>
+                <li class="about"><a href="#">About</a></li>
+                <li class="contact"><a href="#">Contact</a></li>
+              </ul>
+            </div>
+
+ <!--Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon-->
+        <script>
+                function myFunction() {
+                    var x = document.getElementById("myTopnav");
+                    if (x.className === "topnav") {
+                        x.className += " responsive";
+                    } else {
+                        x.className = "topnav";
+                    }
+                }
+                </script>
+
+      <div class="container"> 
+    <div class="frame">
+        <div class="container">
+                <form {{ action "updateForm" on"Submit"}}>
+                    <h2> Log Sheet </h2>     
+                    <div class="form-group">
+                    <label for='member'> Member Name</label>
+                    <input type="text" name="member">
+                    </div>      
+
+                 <br>
+
+                 <div class="form-group">
+
+                    <label for='Date'>Date</label>
+                    <input id="date" type="date"name="date">
+                 </div>
+                 <br>
+
+                 <div class="form-group">
+                     <label for='hoursWorked'>Hours Worked</label>
+                     <input type="number" name="hoursWorked">
+                 </div>
+                 <br>
+
+                 <div class="form-group">
+                     <label for='phase'>Phase of Development</label>
+                     <select id="phase">
+                     <option value="RA">Requirements Analysis</option>
+                     <option value="design">Design</option>
+                     <option value="coding">Coding</option>
+                     <option value="Testing">Testing</option>
+                     <option value="PA">Project Management</option>
+                         </select>
+                 </div>
+                 <br>
+                 <button class="btn-submit" type="submit">Submit</button> 
+                </form>
+             </div>
+         </div>
+    </div>
+   </body>
+
+<footer>
+    <div>
+        </div>
+    </footer>
+</html>
