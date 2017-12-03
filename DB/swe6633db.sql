@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 30, 2017 at 12:47 AM
+-- Generation Time: Dec 03, 2017 at 06:35 PM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -25,37 +25,35 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `functionalrequirements`
+-- Table structure for table `projecthours`
 --
 
-DROP TABLE IF EXISTS `functionalrequirements`;
-CREATE TABLE IF NOT EXISTS `functionalrequirements` (
+DROP TABLE IF EXISTS `projecthours`;
+CREATE TABLE IF NOT EXISTS `projecthours` (
   `projectID` bigint(10) NOT NULL,
-  `fReqID` bigint(10) NOT NULL,
-  `fRequirement` varchar(200) NOT NULL,
-  `fReqAnalysisHours` int(5) NOT NULL,
-  `fReqDesignHours` int(5) NOT NULL,
-  `fReqDevelopmentHours` int(5) NOT NULL,
-  `fReqTestingHours` int(5) NOT NULL,
-  `fReqManagementHours` int(5) NOT NULL
+  `reqID` bigint(10) NOT NULL,
+  `teamMemberID` bigint(10) NOT NULL,
+  `analysisHours` int(5) NOT NULL,
+  `designHours` int(5) NOT NULL,
+  `developmentHours` int(5) NOT NULL,
+  `testingHours` int(5) NOT NULL,
+  `managementHours` int(5) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `nonfunctionalrequirements`
+-- Table structure for table `projectrisks`
 --
 
-DROP TABLE IF EXISTS `nonfunctionalrequirements`;
-CREATE TABLE IF NOT EXISTS `nonfunctionalrequirements` (
+DROP TABLE IF EXISTS `projectrisks`;
+CREATE TABLE IF NOT EXISTS `projectrisks` (
   `projectID` bigint(10) NOT NULL,
-  `nFReqID` bigint(10) NOT NULL,
-  `nonFunctionalRequirements` varchar(200) NOT NULL,
-  `nFRAnalysisHours` int(5) NOT NULL,
-  `nFRDesignHours` int(5) NOT NULL,
-  `nFRDevelopmentHours` int(5) NOT NULL,
-  `nFRTestingHours` int(5) NOT NULL,
-  `nFRManagementHours` int(5) NOT NULL
+  `riskID` bigint(10) NOT NULL,
+  `riskDesc` varchar(200) NOT NULL,
+  `riskPriority` int(10) NOT NULL,
+  `riskStatus` varchar(30) NOT NULL,
+  PRIMARY KEY (`riskID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -68,6 +66,7 @@ DROP TABLE IF EXISTS `projects`;
 CREATE TABLE IF NOT EXISTS `projects` (
   `projectID` bigint(10) NOT NULL,
   `projectName` varchar(100) NOT NULL,
+  `projectDesc` varchar(1000) NOT NULL,
   `projectOwner` varchar(100) NOT NULL,
   `projectTeam` varchar(10000) NOT NULL,
   `startDate` varchar(11) NOT NULL,
@@ -86,28 +85,21 @@ CREATE TABLE IF NOT EXISTS `projectteam` (
   `projectID` bigint(10) NOT NULL,
   `teamMemberID` bigint(10) NOT NULL,
   `teamMemberName` varchar(100) NOT NULL,
-  `designation` varchar(30) NOT NULL,
-  `analysisHours` int(5) NOT NULL,
-  `designHours` int(5) NOT NULL,
-  `developmentHours` int(5) NOT NULL,
-  `testingHours` int(5) NOT NULL,
-  `managementHours` int(5) NOT NULL
+  `designation` varchar(30) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `projecttools`
+-- Table structure for table `requirements`
 --
 
-DROP TABLE IF EXISTS `projecttools`;
-CREATE TABLE IF NOT EXISTS `projecttools` (
+DROP TABLE IF EXISTS `requirements`;
+CREATE TABLE IF NOT EXISTS `requirements` (
   `projectID` bigint(10) NOT NULL,
-  `analysisTools` varchar(50) NOT NULL,
-  `designTools` varchar(50) NOT NULL,
-  `developmentTools` varchar(50) NOT NULL,
-  `testingTools` varchar(50) NOT NULL,
-  `managementTools` varchar(50) NOT NULL
+  `reqID` bigint(10) NOT NULL,
+  `requirements` varchar(200) NOT NULL,
+  `reqType` tinyint(1) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 COMMIT;
 
