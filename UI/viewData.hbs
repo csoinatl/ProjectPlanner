@@ -32,20 +32,23 @@
   <div class="container">
 <div class="frame">
   <div class="container">
+
+       <h2>View Log</h2>
+       <br>
     <form {{action "updateForm" on="submit"}}>
         <label for='projectID'>ProjectID:</label>
         <input placeholder="ProjectID" value=password id='projectID' class="form-styling">
 
          <button class="btn-submit" type="submit">Search</button>
         </form>
-      <h2>View Log</h2>
+     
       <br>
       <h2>Project Hours</h2>
            <table id="projecthours">
                
             <thead>
               <tr>
-                 <th><label for="projectID">Project ID</label></th>
+                  <th><label for="projectID">Project ID</label></th>
                  <th><label for="analysisHours">Total Requirements Analysis Hours</label> </th>
                  <th><label for="designHours">Total Design Hours</label></th>
                  <th><label for="developmentHours">Total Development Hours</label></th>
