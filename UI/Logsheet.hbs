@@ -18,7 +18,7 @@
                 <ul>
                 <li class="home"><a  href="application.hbs">Home</a></li>
                 <li class="tutorials"><a class="active" href="logsheet.hbs">Tracking</a></li>
-                <li class="about"><a href="#">About</a></li>
+               <li class="about"><a href="viewData.hbs">View</a></li>
                 <li class="contact"><a href="#">Contact</a></li>
               </ul>
             </div>
@@ -38,7 +38,7 @@
       <div class="container"> 
     <div class="frame">
         <div class="container">
-                <form {{action "updateForm" on="submit"}}>
+                <form  action "updateForm" on"Submit">
                     <h2> Log Sheet </h2>     
                     <div class="form-group">
                     <label for='member'> Member Name</label>
@@ -71,7 +71,7 @@
                          </select>
                  </div>
 
-                 <div class="form-group">
+                 <div class-"form-group">
                      <label for='tools'>Tools Used</label>
                      <input type="text" name="toolsUsed"class="form-styling">
                  </div>

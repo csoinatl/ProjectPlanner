@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="app.css" media="screen" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <title>Project Planner</title>
+  </head>
+  <body>
+
+<!--Navigation Menu-->
+
+    <div class="nav" id="nav">
+      <ul>
+      <li class="home"><a class="active" href="application.hbs">Home</a></li>
+      <li class="tutorials"><a href="logsheet.hbs">Tracking</a></li>
+      <li class="about"><a href="viewData.hbs">View</a></li>
+      <li class="contact"><a href="#">Contact</a></li>
+    </ul>
+  </div>
+
+    <script>
+  function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+          x.className += " responsive";
+      } else {
+          x.className = "topnav";
+      }
+  }
+  </script>
+
+  <div class="container">
+<div class="frame">
+  <div class="container">
+    <form {{action "updateForm" on="submit"}}>
+      <h2>View Log</h2>
+           <table >
+               
+            <thead>
+              <tr>
+                 <th><label for="projectOwner">Project Owner</label></th>
+                 <th><label for="dbTotalRequirements">Total Requirements Analysis Hours</label> </th>
+                 <th><label for="dbTotalDesign">Total Design Hours</label></th>
+                 <th><label for="dbTotalDevelopment">Total Development Hours</label></th>
+                 <th><label for="dbtotalTesting">Total Testing Hours</label> </th>
+                 <th><label for="dbTotalProjectManagement">Total Project Management Hours</label></th>
+             </tr>
+             <tbody class="form-styling">
+
+             </tbody>
+           </table>
+</form>
+
+  </div>
+</div>
+</div>
+{{outlet}}
+</body>
+</html>
