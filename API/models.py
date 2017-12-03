@@ -1,6 +1,4 @@
 from flask_sqlalchemy import SQLAlchemy
-from werkzeug.security import generate_password_hash, check_password_hash
-import json
 
 db = SQLAlchemy()
 
@@ -11,7 +9,7 @@ class Project(db.model):
     """
 
     __tablename__ = 'projects'
-    projectID = db.column(db.BigInteger, primary_key = True)
+    projectID = db.column(db.BigInteger, primary_key=True)
     projectName = db.column(db.String(100))
     projectOwner = db.column(db.BigInteger)
     projectTeam = db.column(db.Integer)
@@ -23,7 +21,7 @@ class Project(db.model):
         self.projectTeam = project_team
 
 
-class FunctionalRequirements(db.model):
+class Requirements(db.model):
     """
     Model for functional requirements from DB
     """
@@ -48,21 +46,6 @@ class FunctionalRequirements(db.model):
         self.fReqManagementHours = func_req_mngt_hrs
 
 
-class nonFunctionalRequirements(db.model):
-    """
-    Model for functional requirements from DB
-    """
-
-    __tablename__ = 'nonfunctionalrequirements'
-    projectID = db.column(db.BigInteger)
-    nonFunctionalRequirements = db.column(db.String(200))
-    nfReqAnalysisHours = db.column(db.Integer)
-    nfReqDesignHours = db.column(db.Integer)
-    nfReqDevelopmentHours = db.column(db.Integer)
-    nfReqTestingHours = db.column(db.Integer)
-    nfReqManagementHours = db.column(db.Integer)
-
-
 class ProjectTeam(db.model):
     """
     Model for project teams
@@ -76,30 +59,3 @@ class ProjectTeam(db.model):
     developmenthours = db.column(db.Integer)
     testinghours = db.column(db.Integer)
     managementhours = db.column(db.Integer)
-
-
-class ProjectTool(db.model):
-    """
-    Model for project tools
-    """
-
-    __tablename__ = 'projecttool'
-    projectID = db.column(db.BigInteger)
-    analysistools = db.column(db.String(50))
-    designtools = db.column(db.String(50))
-    devemopmenttools = db.column(db.String(50))
-    testingtools = db.column(db.String(50))
-    managemnettools = db.column(db.String(50))
-
-
-class Person(db.model):
-    """
-    Model for person class
-    """
-
-    __tablename__ = "person"
-    personID = db.column(db.BigInteger, primary_key=True)
-    first_name = db.column(db.String(40))
-    last_name = db.column(db.String(40))
-    title = db.column(db.String(40))
-    
