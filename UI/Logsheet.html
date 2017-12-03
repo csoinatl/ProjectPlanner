@@ -11,10 +11,18 @@
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
         
     </head>
-       
+        <!--Navigation Menu-->
+        <div class="nav" id="nav">
+                <ul>
+                <li class="home"><a  href="#">Home</a></li>
+                <li class="tutorials"><a class="active" href="#">Tracking</a></li>
+                <li class="about"><a href="#">About</a></li>
+                <li class="contact"><a href="#">Contact</a></li>
+              </ul>
+            </div>
 
 <body>
-
+ <!--Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon-->
         <script>
                 function myFunction() {
                     var x = document.getElementById("myTopnav");
@@ -26,16 +34,7 @@
                 }
                 </script>
 
-        <div class="nav" id="nav">
-                <ul>
-                <li class="home"><a class="active" href="#">Home</a></li>
-                <li class="tutorials"><a href="#">Tracking</a></li>
-                <li class="about"><a href="#">About</a></li>
-                <li class="contact"><a href="#">Contact</a></li>
-              </ul>
-            </div>
-          
-<div class="container"> 
+      <div class="container"> 
     <div class="frame">
         <div class="container">
                 <form {{ action "updateForm" on"Submit"}}>
@@ -72,16 +71,11 @@
                  </div>
                  <br>
                  <button class="btn-submit" type="submit">Submit</button> 
-</form>
-        </div>
+                </form>
+             </div>
+         </div>
     </div>
-</div>
-   
-  
-
-
-
-</body>
+   </body>
 
 <footer>
     <div>
