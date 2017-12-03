@@ -11,8 +11,8 @@
 
     <div class="nav" id="nav">
       <ul>
-      <li class="home"><a class="active" href="#">Home</a></li>
-      <li class="tutorials"><a href="#">Tracking</a></li>
+      <li class="home"><a class="active" href="application.hbs">Home</a></li>
+      <li class="tutorials"><a href="logsheet.hbs">Tracking</a></li>
       <li class="about"><a href="#">About</a></li>
       <li class="contact"><a href="#">Contact</a></li>
     </ul>
@@ -37,33 +37,34 @@
     <form {{action "updateForm" on="submit"}}>
       <h2>Project Planner Form</h2>
       <div class="form-group">
-        <label for='name'>Project Description:</label>
-        {{input value=description id='description' class="form-styling"}}
+        <label for='ProjectDescription'>Project Description:</label>
+        <input placeholder="Description" id='description' class="form-styling">
+      
       </div>
 <br>
       <div class="form-group">
-        <label for='email'>Project Owner:</label>
-        {{input value=owner id='owner' class="form-styling"}}
+        <label for='projectOwner'>Project Owner:</label>
+        <input placeholder="Name" id='owner' class="form-styling">
       </div>
 <br>
       <div class="form-group">
-        <label for='password'>Team Member:</label>
-        {{input type="memberName" value=password id='memberName' class="form-styling"}}
+        <label for='teamMembers'>Team Member:</label>
+        <input placeholder="Members" value=password id='memberName' class="form-styling">
       </div>
 <br>
       <div class="form-group">
         <label for='password-confirmation'>Project Risks:</label>
-        {{input type="risks" value=risks id='risks' class="form-styling"}}
+        <input placeholder="Risks" value=risks id='risks' class="form-styling">
       </div>
 <br>
       <div class="form-group">
         <label for='password-confirmation'>Functional Requirements:</label>
-        {{input type="functionalReqs" value=functionalReqs id='functionalReqs' class="form-styling"}}
+        <input placeholder="FunctionalReq" value=functionalReqs id='functionalReqs' class="form-styling">
       </div>
 <br>
     <div class="form-group">
       <label for='password-confirmation'>Non-Functional Requirements:</label>
-      {{input type="nonFunctionalReqs" value=nonFunctionalReqs id='nonFunctionalReqs' class="form-styling"}}
+      <input placeholder="nonFunctionalReqs" value=nonFunctionalReqs id='nonFunctionalReqs' class="form-styling">
     </div>
 <br>
       <button class="btn-submit" type="submit">Save</button>
@@ -71,6 +72,6 @@
   </div>
 </div>
 </div>
-{{outlet}}
+<outlet>
 </body>
 </html>
