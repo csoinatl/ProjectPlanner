@@ -33,22 +33,104 @@
 <div class="frame">
   <div class="container">
     <form {{action "updateForm" on="submit"}}>
+        <label for='projectID'>ProjectID:</label>
+        <input placeholder="ProjectID" value=password id='projectID' class="form-styling">
+
+         <button class="btn-submit" type="submit">Search</button>
+        </form>
       <h2>View Log</h2>
-           <table >
+      <br>
+      <h2>Project Hours</h2>
+           <table id="projecthours">
                
             <thead>
               <tr>
-                 <th><label for="projectOwner">Project Owner</label></th>
-                 <th><label for="dbTotalRequirements">Total Requirements Analysis Hours</label> </th>
-                 <th><label for="dbTotalDesign">Total Design Hours</label></th>
-                 <th><label for="dbTotalDevelopment">Total Development Hours</label></th>
-                 <th><label for="dbtotalTesting">Total Testing Hours</label> </th>
-                 <th><label for="dbTotalProjectManagement">Total Project Management Hours</label></th>
+                 <th><label for="projectID">Project ID</label></th>
+                 <th><label for="analysisHours">Total Requirements Analysis Hours</label> </th>
+                 <th><label for="designHours">Total Design Hours</label></th>
+                 <th><label for="developmentHours">Total Development Hours</label></th>
+                 <th><label for="testingHours">Total Testing Hours</label> </th>
+                 <th><label for="managementHours">Total Project Management Hours</label></th>
              </tr>
              <tbody class="form-styling">
 
              </tbody>
            </table>
+           <br>
+           <br>
+           <h2>Project Risks</h2>
+   <table id="projectrisks">
+               
+            <thead>
+              <tr>
+                 <th><label for="projectID">Project ID</label></th>
+                 <th><label for="riskID">Risk ID</label> </th>
+                 <th><label for="riskDesc">Risk Description</label></th>
+                 <th><label for="riskPriority">Risk Priority</label></th>
+                 <th><label for="riskStatus">Risk Status</label> </th>
+             </tr>
+             <tbody class="form-styling">
+
+             </tbody>
+           </table>
+           <br>
+           <br>
+
+           <h2>Projects</h2>
+
+              <table id="projects">
+               
+            <thead>
+              <tr>
+                 <th><label for="projectID">Project ID</label></th>
+                 <th><label for="projectName">Project Name</label> </th>
+                 <th><label for="projectDesc">Project Description</label></th>
+                 <th><label for="projectOwner">Project Owner</label></th>
+                 <th><label for="projectTeam">Project Team</label> </th>
+                 <th><label for="startDate">Start Date</label></th>
+                 <th><label for="endDate">End Date</label></th>
+             </tr>
+             <tbody class="form-styling">
+
+             </tbody>
+           </table>
+<br>
+<br>
+
+<h2>Project Team</h2>
+           <table id="projectteam">
+               
+            <thead>
+              <tr>
+                 <th><label for="projectID"Project ID</label></th>
+                 <th><label for="teamMemberID">Team Member ID</label> </th>
+                 <th><label for="teamMemberName">Team Member Name</label></th>
+                 <th><label for="designation">Designation</label></th>
+             </tr>
+             <tbody class="form-styling">
+
+             </tbody>
+           </table>
+           <br>
+           <br>
+
+           <h2>Requirements</h2>
+
+           <table id="requirements">
+               
+            <thead>
+              <tr>
+                 <th><label for="projectID">Project ID</label></th>
+                 <th><label for="reqID">Requirements ID</label> </th>
+                 <th><label for="requirements">Requirements</label></th>
+                 <th><label for="reqType">Requirements Type</label></th>
+                 </tr>
+             <tbody class="form-styling">
+
+             </tbody>
+           </table>
+
+
 </form>
 
   </div>
