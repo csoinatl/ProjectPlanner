@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="app.css" media="screen" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <title>Project Planner</title>
+  </head>
+  <body>
+
+<!--Navigation Menu-->
+
+    <div class="nav" id="nav">
+      <ul>
+      <li class="home"><a class="active" href="application.html">Home</a></li>
+      <li class="tutorials"><a href="logsheet.html">Tracking</a></li>
+      <li class="about"><a href="#">About</a></li>
+      <li class="contact"><a href="#">Contact</a></li>
+    </ul>
+  </div>
+
+
+<!--Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon-->
+  <script>
+  function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+          x.className += " responsive";
+      } else {
+          x.className = "topnav";
+      }
+  }
+  </script>
+
+<div class="container">
+<div class="frame">
+  <div class="container">
+    <form {{action "updateForm" on="submit"}}>
+      <h2>Project Planner Form</h2>
+      <div class="form-group">
+        <label for='name'>Project Description:</label>
+        {{input value=description id='description' class="form-styling"}}
+      </div>
+<br>
+      <div class="form-group">
+        <label for='email'>Project Owner:</label>
+        {{input value=owner id='owner' class="form-styling"}}
+      </div>
+<br>
+      <div class="form-group">
+        <label for='password'>Team Member:</label>
+        {{input type="memberName" value=password id='memberName' class="form-styling"}}
+      </div>
+<br>
+      <div class="form-group">
+        <label for='password-confirmation'>Project Risks:</label>
+        {{input type="risks" value=risks id='risks' class="form-styling"}}
+      </div>
+<br>
+      <div class="form-group">
+        <label for='password-confirmation'>Functional Requirements:</label>
+        {{input type="functionalReqs" value=functionalReqs id='functionalReqs' class="form-styling"}}
+      </div>
+<br>
+    <div class="form-group">
+      <label for='password-confirmation'>Non-Functional Requirements:</label>
+      {{input type="nonFunctionalReqs" value=nonFunctionalReqs id='nonFunctionalReqs' class="form-styling"}}
+    </div>
+<br>
+      <button class="btn-submit" type="submit">Save</button>
+    </form>
+  </div>
+</div>
+</div>
+{{outlet}}
+</body>
+</html>
