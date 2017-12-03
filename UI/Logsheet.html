@@ -4,45 +4,79 @@
 <html>
     <head>
         <title>
-        Log
+        Log Sheet
         </title>
-        <link rel="stylesheet" href="app.css">
-        <h1 align="center">Entry Sheet</h1>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="app.css" media="screen" />
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+        
     </head>
        
 
 <body>
 
-    <div>
-        <form id="logsheet" name="logsheet" action="">
+        <script>
+                function myFunction() {
+                    var x = document.getElementById("myTopnav");
+                    if (x.className === "topnav") {
+                        x.className += " responsive";
+                    } else {
+                        x.className = "topnav";
+                    }
+                }
+                </script>
 
-<table>
-    <tr>
-        <th>Member</th>
-        <th>Hours Worked</th>
-        <th>Date</th>
-        <th>Phase of Development</th>
-    </tr>
-    <tr>
-        <td><input type="text" name="member"></td>
-        <td> <input type="number" name="hoursWorked"></td>
-        <td><input type="text" name="date"></td>
-        <td><select id="phase">
-                <option value="RA">Requirements Analysis</option>
-                <option value="design">Design</option>
-                <option value="coding">Coding</option>
-                <option value="Testing">Testing</option>
-                <option value="PA">Project Management</option>
-                    </select></td>
-    </tr>
-</table>
-           
-         
+        <div class="nav" id="nav">
+                <ul>
+                <li class="home"><a class="active" href="#">Home</a></li>
+                <li class="tutorials"><a href="#">Tracking</a></li>
+                <li class="about"><a href="#">About</a></li>
+                <li class="contact"><a href="#">Contact</a></li>
+              </ul>
+            </div>
+          
+<div class="container"> 
+    <div class="frame">
+        <div class="container">
+                <form {{ action "updateForm" on"Submit"}}>
+                    <h2> Log Sheet </h2>     
+                    <div class="form-group">
+                    <label for='member'> Member Name</label>
+                    <input type="text" name="member">
+                    </div>      
 
-         <input type="button" formmethod="post" value="Submit" name="submit">
-        
-        </form>
+                 <br>
+
+                 <div class="form-group">
+
+                    <label for='Date'>Date</label>
+                    <input id="date" type="date"name="date">
+                 </div>
+                 <br>
+
+                 <div class="form-group">
+                     <label for='hoursWorked'>Hours Worked</label>
+                     <input type="number" name="hoursWorked">
+                 </div>
+                 <br>
+
+                 <div class="form-group">
+                     <label for='phase'>Phase of Development</label>
+                     <select id="phase">
+                     <option value="RA">Requirements Analysis</option>
+                     <option value="design">Design</option>
+                     <option value="coding">Coding</option>
+                     <option value="Testing">Testing</option>
+                     <option value="PA">Project Management</option>
+                         </select>
+                 </div>
+                 <br>
+                 <button class="btn-submit" type="submit">Submit</button> 
+</form>
+        </div>
     </div>
+</div>
+   
   
 
 
