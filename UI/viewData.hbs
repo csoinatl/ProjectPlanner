@@ -34,19 +34,39 @@
        <h2>View Log</h2>
        <br>
     <form {{action "updateForm" on="submit"}}>
-        <label for='projectID'>ProjectID:</label>
-        <input placeholder="ProjectID" value=password id='projectID' class="form-styling">
+        <label for='projectID'>Enter Project ID:</label>
+        <input placeholder="ProjectID" id='projectID' class="form-styling">
 
          <button class="btn-submit" type="submit">Search</button>
         </form>
      
+	  <h2>Projects</h2>
+
+              <table border = 1>
+               
+            <thead>
+              <tr>
+			     <th><label for="projectID">Project ID</label></th>
+                 <th><label for="projectName">Project Name</label> </th>
+                 <th><label for="projectDesc">Project Description</label></th>
+                 <th><label for="projectOwner">Project Owner</label></th>
+                 <th><label for="projectTeam">Project Team</label> </th>
+                 <th><label for="startDate">Start Date</label></th>
+                 <th><label for="endDate">End Date</label></th>
+             </tr>
+             <tbody class="form-styling">
+
+             </tbody>
+           </table>
+<br>
+<br>
+	 
       <br>
       <h2>Project Hours</h2>
            <table border = 1>
                
             <thead>
               <tr>
-                  <th><label for="projectID">Project ID</label></th>
                  <th><label for="analysisHours">Total Requirements Analysis Hours</label> </th>
                  <th><label for="designHours">Total Design Hours</label></th>
                  <th><label for="developmentHours">Total Development Hours</label></th>
@@ -60,7 +80,7 @@
            <br>
            <br>
            <h2>Project Risks</h2>
-   <table id="projectrisks" border = 1>
+   <table border = 1>
                
             <thead>
               <tr>
@@ -76,28 +96,10 @@
            <br>
            <br>
 
-           <h2>Projects</h2>
-
-              <table id="projects" border = 1>
-               
-            <thead>
-              <tr>
-                 <th><label for="projectName">Project Name</label> </th>
-                 <th><label for="projectDesc">Project Description</label></th>
-                 <th><label for="projectOwner">Project Owner</label></th>
-                 <th><label for="projectTeam">Project Team</label> </th>
-                 <th><label for="startDate">Start Date</label></th>
-                 <th><label for="endDate">End Date</label></th>
-             </tr>
-             <tbody class="form-styling">
-
-             </tbody>
-           </table>
-<br>
-<br>
+          
 
 <h2>Project Team</h2>
-           <table id="projectteam" border = 1>
+           <table border = 1>
                
             <thead>
               <tr>
@@ -114,7 +116,7 @@
 
            <h2>Requirements</h2>
 
-           <table id="requirements" border = 1>
+           <table border = 1>
                
             <thead>
               <tr>
