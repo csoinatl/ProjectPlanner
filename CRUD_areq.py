@@ -4,84 +4,38 @@ sqlCursor = conn.cursor()
 
 
 ##------------------------
-def addrequirements(pid, rid, reqtext, rtype):
-     "Add a new requirement to the requirements table"
-     add_req = ("INSERT INTO requirements "
-           "(projectID, reqID, requirements, reqType)"
-           "VALUES %d, %d, %s, %d)")
-     data_req = (pid, rid, reqtext, rtype)
-
-     ## Insert new requirement
-     sqlCursor.execute(add_req, data_req);
-     conn.commit()
-     print ('Parameters for addrequirements function: %d - %d - %s - %d', pid, rid, reqtext, rtype)
-     print ('query: %s%s', add_req, data_req)
+def addrequirements(pid,rid,reqtext,rtype):
+     sqlCursor.execute("INSERT INTO requirements VALUES(" + str(pid) + "," + str(rid) + ",\'" + reqtext + "\'," + str(rtype)+")")
+     print ('done')
      return
-    ##------------------------
 
 ##------------------------
 def addprojectteam(pid, tid, tmname, desig):
      "Add a new requirement to the projectteam table"
-     add_req = ("INSERT INTO projectteam "
-           "(projectID, teamMemberID, teamMemberName, designation)"
-           "VALUES %d, %d, %s, %d)")
-     data_req = (pid, rid, reqtext, rtype)
-
-     ## Insert new Team Member
-     sqlCursor.execute(add_req, data_req);
-     conn.commit()
-     print ('Parameters for addprojectteam function: %d - %d - %s - %d', pid, tid, tmname, desig)
-     print ('query: %s%s', add_req, data_req)
+    sqlCursor.execute("INSERT INTO projectTeam VALUES(" + str(pid) + "," + str(tid) + ",\'" + tmname + "\'," + str(desig)+")")
+     print ('done')
      return
-    ##------------------------
 
 ##------------------------
 def addprojects(pid, pname, pdesc, pown, pteam, sdate, edate):
      "Add a new requirement to the projects table"
-     add_req = ("INSERT INTO projects "
-           "(projectID, projectName, projectDesc, projectOwner, projectTeam, startDate, endDate)"
-           "VALUES %d, %s, %s, %s, %s, %s, %s)")
-     data_req = (pid, pname, pdesc, pown, pteam, sdate, edate)
-
-     ## Insert new projects
-     sqlCursor.execute(add_req, data_req);
-     conn.commit()
-     print ('Parameters for addprojects function: %d - %s - %s - %s - %s - %s - %s', pid, pname, pdesc, pown, pteam, sdate, edate)
-     print ('query: %s%s', add_req, data_req)
+     sqlCursor.execute("INSERT INTO projects VALUES(" + str(pid) + "," + pname + ",\'" + pdesc + "\',\'" + pown+ "\',\'" +pteam+ "\',\'" +sdate+ "\',\'" +edate+"\')")
+     print ('done')
      return
-    ##------------------------
 
 ##------------------------
 def addprojectrisks(pid, rid, rdesc, rpri, rstat):
      "Add a new requirement to the projectrisks table"
-     add_req = ("INSERT INTO projectrisks "
-           "(projectID, projectName, projectDesc, projectOwner, projectTeam, startDate, endDate)"
-           "VALUES %d, %d, %s, %d, %s)")
-     data_req = (pid, rid, rdesc, rpri, rstat)
-
-     ## Insert new projectrisks
-     sqlCursor.execute(add_req, data_req);
-     conn.commit()
-     print ('Parameters for addprojectrisks function: %d - %d - %s - %d - %s', pid, rid, rdesc, rpri, rstat)
-     print ('query: %s%s', add_req, data_req)
+    sqlCursor.execute("INSERT INTO projectRisks VALUES(" + str(pid) + "," + str(rid) + ",\'" + rdesc + "\'," + str(rpri)+ ","+ rstat +")")
+     print ('done')
      return
-    ##------------------------
 
 ##------------------------
 def addprojecthours(pid, rid, tid, ahr, deshr, devhr, thr, mhr):
      "Add a new requirement to the projecthours table"
-     add_req = ("INSERT INTO projecthours "
-           "(projectID, projectName, projectDesc, projectOwner, projectTeam, startDate, endDate)"
-           "VALUES %d, %d, %s, %d, %s)")
-     data_req = (pid, rid, tid, ahr, deshr, devhr, thr, mhr)
-
-     ## Insert new projecthours
-     sqlCursor.execute(add_req, data_req);
-     conn.commit()
-     print ('Parameters for addprojecthours function: %d - %d - %d - %d - %d - %d - %d - %d', pid, rid, tid, ahr, deshr, devhr, thr, mhr)
-     print ('query: %s%s', add_req, data_req)
+    sqlCursor.execute("INSERT INTO projectHours VALUES(" + str(pid) + "," + str(rid) + "," + str(tid) + "," + str(ahr)+"," +str(deshr)+","+str(devhr)+","+str(thr)+","+str(mhr)+")")
+     print ('done')
      return
-    ##------------------------
 
 ##------------------------
 def getrequirements(pid):
@@ -133,7 +87,7 @@ def delprojects(pid):
 ##------------------------
 def delprojectrisks(pid, rid):
 
-    sqlCursor.execute("DELETE FROM projectrisks WHERE projectID =" +str(pid)+ " and reqID = "+str(rid))
+   sqlCursor.execute("DELETE FROM projectrisks WHERE projectID =" +str(pid)+ " and riskID = "+str(rid))
     conn.commit()
     print('done')
     return
