@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="app.css" media="screen" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <title>Project Planner</title>
+  </head>
+  <body>
+
+<!--Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon-->
+  <script>
+  function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+          x.className += " responsive";
+      } else {
+          x.className = "topnav";
+      }
+  }
+  </script>
+
+<div class="container">
+<div class="frame">
+  <div class="container">
+    <form {{action "updateForm" on="submit"}}>
+      <h2>Project Planner Form</h2>
+      <div class="form-group">
+        <label for='ProjectDescription'>Project Description:</label>
+        <input placeholder="Description" id='description' class="form-styling">
+
+      </div>
+<br>
+      <div class="form-group">
+        <label for='projectOwner'>Project Owner:</label>
+        <input placeholder="Name" id='owner' class="form-styling">
+      </div>
+<br>
+      <div class="form-group">
+        <label for='teamMembers'>Team Member:</label>
+        <input placeholder="Members" value=password id='memberName' class="form-styling">
+      </div>
+<br>
+      <div class="form-group">
+        <label for='password-confirmation'>Project Risks:</label>
+        <input placeholder="Risks" value=risks id='risks' class="form-styling">
+      </div>
+<br>
+      <div class="form-group">
+        <label for='password-confirmation'>Functional Requirements:</label>
+        <input placeholder="FunctionalReq" value=functionalReqs id='functionalReqs' class="form-styling">
+      </div>
+<br>
+    <div class="form-group">
+      <label for='password-confirmation'>Non-Functional Requirements:</label>
+      <input placeholder="nonFunctionalReqs" value=nonFunctionalReqs id='nonFunctionalReqs' class="form-styling">
+    </div>
+<br>
+      <button class="btn-submit" type="submit">Save</button>
+    </form>
+  </div>
+</div>
+</div>
+<outlet>
+</outlet>
+</body>
+</html>

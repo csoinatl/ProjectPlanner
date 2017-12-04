@@ -1,0 +1,21 @@
+<!--Navigation Menu-->
+
+    <div class="nav" id="nav">
+      <div class="links">
+        {{#link-to 'home'}}
+          Home
+        {{/link-to}}
+        {{#link-to 'tutorials'}}
+          Tutorials
+        {{/link-to}}
+        {{#link-to 'about'}}
+          About
+        {{/link-to}}
+        {{#link-to 'contact'}}
+          Contact
+        {{/link-to}}
+      </div>
+    </div>
+    <div class="body">
+      {{outlet}}
+    </div>
