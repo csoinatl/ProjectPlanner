@@ -3,8 +3,8 @@ from flask import Flask
 import sqlalchemy
 
 dbhost = 'localhost'
-dbuser = 'root'
-dbpass = 'admin'
+dbuser = 'pythonuser'
+dbpass = 'Password1'
 dbname = 'swe6633'
 
 engine = sqlalchemy.create_engine('mysql://'+dbuser+'@'+dbhost, pool_recycle=280)

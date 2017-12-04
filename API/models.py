@@ -3,16 +3,16 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 
-class Project(db.model):
+class Project(db.Model):
     """
     Model for project information based on the DB
     """
 
     __tablename__ = 'projects'
-    projectID = db.column(db.BigInteger, primary_key=True)
-    projectName = db.column(db.String(100))
-    projectOwner = db.column(db.BigInteger)
-    projectTeam = db.column(db.Integer)
+    projectID = db.Column(db.BigInteger, primary_key=True)
+    projectName = db.Column(db.String(100))
+    projectOwner = db.Column(db.BigInteger)
+    projectTeam = db.Column(db.Integer)
 
     def __init__(self, project_id, project_name, project_owner, project_team):
         self.projectID = project_id
@@ -21,19 +21,19 @@ class Project(db.model):
         self.projectTeam = project_team
 
 
-class Requirements(db.model):
+class Requirements(db.Model):
     """
     Model for functional requirements from DB
     """
 
     __tablename__ = 'functionalrequirements'
-    projectID = db.column(db.BigInteger)
-    fRequirement = db.column(db.String(200))
-    fReqAnalysisHours = db.column(db.Integer)
-    fReqDesignHours = db.column(db.Integer)
-    fReqDevelopmentHours = db.column(db.Integer)
-    fReqTestingHours = db.column(db.Integer)
-    fReqManagementHours = db.column(db.Integer)
+    projectID = db.Column(db.BigInteger)
+    fRequirement = db.Column(db.String(200))
+    fReqAnalysisHours = db.Column(db.Integer)
+    fReqDesignHours = db.Column(db.Integer)
+    fReqDevelopmentHours = db.Column(db.Integer)
+    fReqTestingHours = db.Column(db.Integer)
+    fReqManagementHours = db.Column(db.Integer)
 
     def __init__(self, project_id, func_req, func_req_anal_hrs, func_rec_des_hrs,
                  func_rec_dev_hrs, func_req_test_hrs, func_req_mngt_hrs):
@@ -46,16 +46,16 @@ class Requirements(db.model):
         self.fReqManagementHours = func_req_mngt_hrs
 
 
-class ProjectTeam(db.model):
+class ProjectTeam(db.Model):
     """
     Model for project teams
     """
 
     __tablename__ = "projectteam"
-    projectID = db.column(db.BigInteger)
-    designation = db.column(db.String(30))
-    analysishours = db.column(db.Integer)
-    designhours = db.column(db.Integer)
-    developmenthours = db.column(db.Integer)
-    testinghours = db.column(db.Integer)
-    managementhours = db.column(db.Integer)
+    projectID = db.Column(db.BigInteger)
+    designation = db.Column(db.String(30))
+    analysishours = db.Column(db.Integer)
+    designhours = db.Column(db.Integer)
+    developmenthours = db.Column(db.Integer)
+    testinghours = db.Column(db.Integer)
+    managementhours = db.Column(db.Integer)

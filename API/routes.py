@@ -54,13 +54,14 @@ if __name__ == '__main__':
     # run some stuff here:
     # Insert a project
 
-    proj = Project
-    proj.projectID = '1'
-    proj.projectName = 'Test project'
-    proj.projectTeam = 'Charlie So'
+    proj = Project(project_id='2', project_name='Test Project', project_owner='Charlie So', project_team='Adam West')
 
-    session.add(proj)
-    session.commit()
+    try:
+        session.add(proj)
+        session.commit()
+    except:
+        print 'Error inserting data'
+        session.rollback()
 
     if session.query(exists().where(Project.projectName == 'Test project')).scalar():
         res = session.query(Project).filter_by(projectName='Test project').first()
