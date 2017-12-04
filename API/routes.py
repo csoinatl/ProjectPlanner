@@ -37,7 +37,7 @@ def projecs():
     return render_template('projects.html')
 
 
-@app.route('/project', method=['GET', 'POST'])
+@app.route('/project', methods=['GET', 'POST'])
 def projectlist():
     """
     Returns information for a specific project, sent via REST call
