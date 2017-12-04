@@ -13,6 +13,7 @@ Router.map(function() {
   this.route('tutorials');
   this.route('home');
   this.route('contact');
+  this.route('projectlist');
 });
 
 export default Router;
